@@ -645,7 +645,7 @@ end
 ]],
 	},
 	{
-		Name = TALENT_SPEC_PRIMARY or "Primary Talents",
+		Name = "1 "..(TALENT_SPEC_PRIMARY or "Primary Talents"),
 		ID = "Talent1",
 		Category = "GENERAL",
 		Script = Outfitter:GenerateScriptHeader("ACTIVE_TALENT_GROUP_CHANGED", "Equips the outfit when you activate your primary talents")..
@@ -654,7 +654,7 @@ equip = GetActiveTalentGroup() == 1
 ]],
 	},
 	{
-		Name = TALENT_SPEC_SECONDARY or "Secondary Talents",
+		Name = "2 "..(TALENT_SPEC_SECONDARY or "Secondary Talents"),
 		ID = "Talent2",
 		Category = "GENERAL",
 		Script = Outfitter:GenerateScriptHeader("ACTIVE_TALENT_GROUP_CHANGED", "Equips the outfit when you activate your secondary talents")..
@@ -1470,26 +1470,29 @@ end
 -- $EVENTS PLAYER_ENTERING_WORLD
 -- $DESC Equips the outfit when you're in a 5 player level 80 instance
 
+SetMapToCurrentZone()
 local name, type, difficulty, difficultyName = GetInstanceInfo()
+name = GetMapInfo() -- added
 
 if type == "party"
-and (name == Outfitter.LZ["Trial of the Champion"]
-or name == Outfitter.LZ["The Culling of Stratholme"]
-or name == Outfitter.LZ["Halls of Lightning"]
-or name == Outfitter.LZ["The Oculus"]
-or name == Outfitter.LZ["Utgarde Pinnacle"]
-or name == Outfitter.LZ["The Forge of Souls"]
-or name == Outfitter.LZ["Pit of Saron"]
-or name == Outfitter.LZ["Halls of Reflection"]
+and (name == "TrialoftheChampion" -- Outfitter.LZ["Trial of the Champion"]
+or name == "CoTStratholme" -- Outfitter.LZ["The Culling of Stratholme"]
+or name == "HallsofLightning" -- Outfitter.LZ["Halls of Lightning"]
+or name == "Nexus80" -- Outfitter.LZ["The Oculus"]
+or name == "UtgardePinnacle" -- Outfitter.LZ["Utgarde Pinnacle"]
+or name == "TheForgeofSouls" -- Outfitter.LZ["The Forge of Souls"]
+or name == "PitofSaron" -- Outfitter.LZ["Pit of Saron"]
+or name == "HallsofReflection" -- Outfitter.LZ["Halls of Reflection"]
 or (difficulty == 2
-    and (name == Outfitter.LZ["Ahn'kahet: The Old Kingdom"]
-      or name == Outfitter.LZ["Azjol-Nerub"]
-      or name == Outfitter.LZ["Drak'Tharon Keep"]
-      or name == Outfitter.LZ["Gundrak"]
-      or name == Outfitter.LZ["Halls of Stone"]
-      or name == Outfitter.LZ["The Nexus"]
-      or name == Outfitter.LZ["Utgarde Keep"]
-      or name == Outfitter.LZ["Violet Hold"]))) then
+    and (name == "Ahnkahet" -- Outfitter.LZ["Ahn'kahet: The Old Kingdom"]
+      or name == "AzjolNerub" -- Outfitter.LZ["Azjol-Nerub"]
+      or name == "DrakTharonKeep" -- Outfitter.LZ["Drak'Tharon Keep"]
+      or name == "Gundrak" -- Outfitter.LZ["Gundrak"]
+      or name == "Ulduar77" -- Outfitter.LZ["Halls of Stone"]
+      or name == "TheNexus" -- Outfitter.LZ["The Nexus"]
+      or name == "UtgardeKeep" -- Outfitter.LZ["Utgarde Keep"]
+      or name == "VioletHold" -- Outfitter.LZ["The Violet Hold"]
+	  ))) then
     equip = true
 else
     equip = false

@@ -1,8 +1,7 @@
 ## Interface: 30300
-## X-Compatible-With: 40000
-## Author: John Stephen
+## Author: John Stephen (original), Telkar@Rising-Gods (WotLK updates)
 ## Title: Outfitter
-## Version: 5.0
+## Version: 5w.1.0
 ## Notes: Clothing and weapon management and automated equipment changes
 ## OptionalDeps: Titan, FuBar, TankPoints, ButtonFacade
 ## RequiredDeps: 
