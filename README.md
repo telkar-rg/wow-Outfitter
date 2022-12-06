@@ -4,6 +4,6 @@ Based on original version 5.0 by [John Stephen](https://github.com/Mundocani/Out
 > Outfitter is an equipment management addon which gives you fast access to multiple outfits to optimize your abilities in PvE and PvP, automated equip and unequip for convenience doing a variety of activities, or to enhance role-playing.
 
 ## Changelog
-- 5w.1.0
+- [5w.1.0](https://github.com/telkar-rg/wow-Outfitter/releases/tag/5w.1.0)
   - FEATURE: Made talent specialization script names more "sortable"
   - BUGFIX: Fixed localisation bug in campioning script
